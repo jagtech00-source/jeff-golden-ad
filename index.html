@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeff Golden | Golden's Diner — Utica, NY</title>
+<meta name="description" content="Chef Jeff Golden runs Golden's, a one-man diner at 244 Genesee Street in Utica. Fresh from scratch, no takeout, no weekends. Quality over quantity.">
+<meta property="og:title" content="Jeff Golden | Golden's Diner">
+<meta property="og:description" content="One chef. Sixteen seats. Everything made from scratch in front of you.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://uticatangerine.com/wp-content/uploads/2022/10/E49B7FD5-8B47-40BF-AC87-9A0CC15FDCFB.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f7f1e3;
+    --ink: #1a1a1a;
+    --amber: #e8a33d;
+    --rust: #c0392b;
+    --sage: #4a6b4a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(rgba(26,26,26,0.55), rgba(26,26,26,0.75)), url('https://uticatangerine.com/wp-content/uploads/2022/10/E49B7FD5-8B47-40BF-AC87-9A0CC15FDCFB.jpeg') center/cover no-repeat;
+    color: #fff;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+  .hero .tag {
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    font-weight: 500;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    opacity: 0.95;
+  }
+  .hero .cta {
+    display: inline-block;
+    background: var(--amber);
+    color: var(--ink);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .hero .cta:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(232,163,61,0.4); }
+  .hero .meta {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    opacity: 0.85;
+  }
+  section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--ink);
+  }
+  .section-title span { color: var(--rust); }
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .story-grid img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  }
+  .story-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .story-text p { margin-bottom: 1rem; font-size: 1.05rem; }
+  .quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--rust);
+    border-left: 4px solid var(--amber);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .gallery figure {
+    margin: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  .gallery figure:hover { transform: translateY(-5px); }
+  .gallery img { width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover; }
+  .gallery figcaption {
+    padding: 1rem;
+    background: #fff;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  .video-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  }
+  .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  .reviews {
+    background: #fff;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  }
+  .review-card {
+    border-bottom: 1px solid #eee;
+    padding: 1.5rem 0;
+  }
+  .review-card:last-child { border-bottom: none; }
+  .review-card .stars { color: var(--amber); margin-bottom: 0.5rem; }
+  .review-card p { font-size: 1rem; }
+  .review-card .author { font-size: 0.85rem; color: #888; margin-top: 0.5rem; }
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin: 3rem 0;
+  }
+  .stat { text-align: center; }
+  .stat .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--rust);
+  }
+  .stat .label { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; color: #666; }
+  .cta-band {
+    background: var(--ink);
+    color: #fff;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  .cta-band h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+  .cta-band a {
+    display: inline-block;
+    background: var(--amber);
+    color: var(--ink);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 1rem;
+  }
+  footer {
+    background: #111;
+    color: #888;
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.85rem;
+  }
+  footer a { color: var(--amber); text-decoration: none; }
+  @media (max-width: 768px) {
+    .story-grid { grid-template-columns: 1fr; }
+    .stats { gap: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>Jeff Golden</h1>
+  <p class="tag">One chef. Sixteen seats. Everything made from scratch, right in front of you.</p>
+  <a href="#visit" class="cta">Come Hungry</a>
+  <p class="meta">Golden's Diner · 244 Genesee Street, Utica, NY · Mon–Fri 7am–2pm</p>
+</header>
+
+<section>
+  <h2 class="section-title">The <span>One-Man</span> Kitchen</h2>
+  <div class="story-grid">
+    <img src="https://uticatangerine.com/wp-content/uploads/2022/10/E49B7FD5-8B47-40BF-AC87-9A0CC15FDCFB.jpeg" alt="Jeff Golden in chef coat behind the counter at Golden's Diner" loading="lazy">
+    <div class="story-text">
+      <h2>From Clinton House to a triangle diner</h2>
+      <p>Jeff Golden started at sixteen, apprenticing at the Clinton House — the kitchen legend says birthed Utica Chicken Riggies. He ran kitchens for hundreds at Turning Stone Casino and Hamilton College, then walked away from corporate food.</p>
+      <p>He bought the old Triangle Coffee space and opened Golden's. No weekends. No takeout. Just sixteen seats and a guy who cooks everything himself, from scratch, while you watch.</p>
+      <div class="quote">"I'm looking for quality over quantity. And it seems to work."</div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff;">
+  <h2 class="section-title">See It <span>In Action</span></h2>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/DHKD4r5OcTK" title="Takes N Plates reel — Golden's Diner" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <p style="text-align:center; margin-top:1rem; color:#666; font-size:0.9rem;">From the Takes 'N Plates reel: "When one person does it all… Golden's Diner."</p>
+</section>
+
+<section>
+  <h2 class="section-title">The <span>Gallery</span></h2>
+  <div class="gallery">
+    <figure>
+      <img src="https://uticatangerine.com/wp-content/uploads/2022/10/E49B7FD5-8B47-40BF-AC87-9A0CC15FDCFB.jpeg" alt="Jeff Golden kitchen portrait" loading="lazy">
+      <figcaption>Chef coat on, griddle hot. The Tangerine, 2022.</figcaption>
+    </figure>
+    <figure>
+      <img src="https://scontent-iad6-1.xx.fbcdn.net/v/t15.5256-10/484284811_1860845038036891_7137050811962284090_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=102&ccb=1-7&_nc_sid=be8305&_nc_ohc=1s_YwKsIwSgQ7kNvwEHU2se&_nc_oc=AdpI7EL-PomLc3ybJzAKPt1AQv-IBZhVAeKgAUCI-4-DgQVmTmEdljmAkJC7ON5W_xo&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&_nc_gid=Kq9DPO-LiNkOI-XwBv7qtg&_nc_ss=7b289&oh=00_AQBU6kCtaGFL0f9X-SCJXK1mkHsAffGf16nHwUuneXAw_g&oe=6A4A1E22" alt="Jeff Golden with cannoli strawberry French toast" loading="lazy">
+      <figcaption>Cannoli-strawberry French toast. The secret weapon: cherry pepper pesto.</figcaption>
+    </figure>
+    <figure>
+      <img src="https://drive.google.com/thumbnail?id=1QgZEsdpk2nyZOb4hKgEWuYO_bqN4BHu4&sz=w1000" alt="Jeff Golden LinkedIn headshot" loading="lazy">
+      <figcaption>The man behind the counter. Black and white, no filter needed.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section style="background:#fff;">
+  <h2 class="section-title">What People <span>Say</span></h2>
+  <div class="stats">
+    <div class="stat"><div class="num">4.8</div><div class="label">Google Stars</div></div>
+    <div class="stat"><div class="num">4.9</div><div class="label">Restaurantji</div></div>
+    <div class="stat"><div class="num">100%</div><div class="label">Recommend</div></div>
+    <div class="stat"><div class="num">16</div><div class="label">Seats Only</div></div>
+  </div>
+  <div class="reviews">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"This place is great! Owner/operator is a cool and kind cat, a retired chef with lots of great stories if you ask him. He slings delicious eggs and will get you in and out quickly if you need it! The atmosphere of this little triangular hole in the wall diner is, true to form, golden."</p>
+      <div class="author">— Google Review</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Easily the best breakfast sandwich I've ever eaten. Only regret about today is after seeing all the other people's orders I didn't order other things to try. But it will be a weekly visit for me now. Owner was real cool dude as well. Must try!!!"</p>
+      <div class="author">— Restaurantji, December 2025</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"This was one of the first home-cooked meals I felt like I've had since we got on the road — everything is made from scratch. Not to mention, Jeff is incredibly kind! It's been one of my favorite food stops to date."</p>
+      <div class="author">— Google Review, touring performer</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Fantastic burgers — I had the 'Utica Burger,' and my girlfriend had the 'G-Mac.' Great tasting and cooked right in front of us by the owner, Jeff. We had a great time!"</p>
+      <div class="author">— Google Review</div>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <h2 class="section-title">Come <span>Hungry</span></h2>
+  <div class="story-grid">
+    <div class="story-text">
+      <h2>244 Genesee Street, Utica</h2>
+      <p>Monday through Friday, seven to two. Closed weekends. No takeout — the food doesn't travel well, and Jeff doesn't want it to.</p>
+      <p>You'll sit at the counter. You'll watch the eggs hit the griddle. You might hear a story about the '80s kitchen scene, or why he forages ramps for the tomato salad.</p>
+      <p>It's not a restaurant. It's a conversation with breakfast.</p>
+      <div class="quote">"I'm pretty much a bartender with food."</div>
+    </div>
+    <img src="https://drive.google.com/thumbnail?id=1QgZEsdpk2nyZOb4hKgEWuYO_bqN4BHu4&sz=w1000" alt="Jeff Golden" loading="lazy" style="border-radius:12px; box-shadow:0 20px 50px rgba(0,0,0,0.15);">
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Quality Over Quantity</h2>
+  <p style="max-width:500px; margin:0 auto 1rem; opacity:0.9;">Seven years in, still one guy, still from scratch. Come sit at the counter.</p>
+  <a href="tel:3155076931">Call (315) 507-6931</a>
+</div>
+
+<footer>
+  <p>Built from public photos, articles, and reviews of Golden's Diner. © Jeff Golden / Golden's. <a href="https://goldensfoodllc.wixsite.com/goldens">goldensfoodllc.wixsite.com/goldens</a></p>
+</footer>
+
+</body>
+</html>
